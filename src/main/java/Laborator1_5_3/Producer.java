@@ -5,44 +5,24 @@ import java.util.Random;
 public class Producer extends Thread {
     public int id;
     public Random random;
-    public Boolean printerOccupied;
+    public Printer printer;
 
     public Producer() {}
 
-    public Producer(int id, Boolean printerOccupied) {
+    public Producer(int id, Printer printer) {
         this.id = id;
         this.random = new Random();
-        this.printerOccupied = printerOccupied;
+        this.printer = printer;
     }
 
     @Override
     public void run() {
-        int counter = 0;
         while(true) {
-            counter++;
-            this.print(counter);
+            this.usePrinter(Math.abs(random.nextInt()) % 2000 + 1000);
         }
     }
 
-    public synchronized void print(int counter) {
-        System.out.println("Thread: " + this.id + " Counter: " + counter);
-        while (this.printerOccupied) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        this.printerOccupied = true;
-        int time = Math.abs(random.nextInt()) % 2000 + 5000;
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Thread " + id + " printed in " + (float) time / 1000 + " seconds. Counter: " + counter);
-        this.printerOccupied = false;
-        notifyAll();
+    public synchronized void usePrinter(int time) {
+        this.printer.executePrint("Producer " + this.id + " printed in " + time + " ms.", time);
     }
 }
