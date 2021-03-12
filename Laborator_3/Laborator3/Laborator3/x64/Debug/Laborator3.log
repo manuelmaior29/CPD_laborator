@@ -1,0 +1,5 @@
+﻿  Laborator_3_1.cpp
+C:\backup manu\Anul IV\Semestrul 2\Calcul Paralel si Distribuit\Laborator\Laborator_3\Laborator3\Laborator3\Laborator_3_1.cpp(17,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\backup manu\Anul IV\Semestrul 2\Calcul Paralel si Distribuit\Laborator\Laborator_3\Laborator3\Laborator3\Laborator_3_1.cpp(18,31): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\backup manu\Anul IV\Semestrul 2\Calcul Paralel si Distribuit\Laborator\Laborator_3\Laborator3\Laborator3\Laborator_3_1.cpp(11,18): warning C4101: 'tid': unreferenced local variable
+  Laborator3.vcxproj -> C:\backup manu\Anul IV\Semestrul 2\Calcul Paralel si Distribuit\Laborator\Laborator_3\Laborator3\x64\Debug\Laborator3.exe
